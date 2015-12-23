@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 export default class Weather extends Component {
 	handleLocationChange(e) {
 		const location = this.refs.location;
-		const text = location.value.trim();
+		const text = location.value;
 		this.props.onLocationChange(text);
 	}
 
