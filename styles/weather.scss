@@ -1,0 +1,112 @@
+.weather {
+	position: fixed;
+	top: 1em;
+	right: 1em;
+	width: 120px;
+	text-shadow: 0px 0px 3px rgba(#000, 0.1);
+
+	@include bg-blur;
+
+	.attribution {
+		position: absolute;
+		right: 120%;
+		top: 0;
+		padding: 0.3em;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include bg-blur;
+
+		opacity: 0;
+		transition: 400ms opacity;
+	}
+	&:hover .attribution {
+		opacity: 1;
+	}
+
+	.widget {
+		display: flex;
+		justify-content: flex-end;
+		font-size: 2rem;
+		line-height: 3rem;
+		position: relative;
+
+		cursor: hand;
+		cursor: pointer;
+	}
+
+	.icon {
+		font-size: 3rem;
+		line-height: 3rem;
+		margin-right: 0.1em;
+	}
+
+	.settings {
+		box-shadow: 0 1px 2px rgba(#000, 0.2);
+		position: absolute;
+		right: 0;
+		width: 100%;
+
+		input {
+			background: rgba(#fff, 0.3);
+			width: 100%;
+		}
+
+		opacity: 0;
+		transition: 400ms opacity;
+	}
+
+	&:hover .settings {
+		opacity: 1;
+	}
+
+	.units {
+		line-height: 1.8em;
+
+		@include toggle {
+			background-color: rgba(#fff, 0.4);
+		}
+	}
+
+	.overlay {
+		position: fixed;
+		width: 12rem;
+		margin-top: 4rem;
+
+		// right: 1rem;
+		right: -12rem;
+		transition: right 0.2s ease-out 0s, opacity 0.01s linear 0.2s;
+
+		@include bg-blur;
+
+		.forecast {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: flex;
+				align-items: center;
+			}
+
+			.icon {
+				width: 2.5rem;
+			}
+			.day {
+				flex: 1 0;
+			}
+			.temp {
+				width: 2rem;
+			}
+			.temp-low {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	&.expanded .overlay {
+		right: 1rem;
+	}
+}

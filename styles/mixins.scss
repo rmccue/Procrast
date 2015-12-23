@@ -1,0 +1,53 @@
+@mixin bg-blur {
+	background: inherit;
+
+	&:before {
+		display: block;
+		content: " ";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: inherit;
+		filter: blur(5px);
+		z-index: 1;
+	}
+
+	> * {
+		z-index: 2;
+		position: relative;
+	}
+}
+
+/**
+ * Toggler
+ *
+ * Set the content of the mixin to your selected style
+ */
+@mixin toggle {
+	display: flex;
+
+	> * {
+		display: block;
+		// width: 50%;
+		flex-grow: 1;
+		text-align: center;
+	}
+
+	input {
+		opacity: 0;
+		position: absolute;
+		z-index: -1;
+	}
+
+	label {
+		display: block;
+		cursor: hand;
+		cursor: pointer;
+	}
+
+	input:checked ~ label {
+		@content;
+	}
+}

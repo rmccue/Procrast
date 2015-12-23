@@ -1,0 +1,29 @@
+body {
+	font-family: "HelveticaNeue-Medium","Helvetica Neue Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#root, #app {
+	height: 100%;
+}
+
+
+@keyframes fadein{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	color: #fff;
+	animation: fadein 0.5s ease;
+	background-color: #fff;
+	background-attachment: fixed;
+	background-size: cover;
+}

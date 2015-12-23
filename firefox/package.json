@@ -1,0 +1,15 @@
+{
+  "title": "Procrast",
+  "name": "firefox",
+  "version": "0.0.1",
+  "description": "YOLO",
+  "main": "index.js",
+  "author": "Ryan McCue",
+  "engines": {
+    "firefox": ">=41.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
