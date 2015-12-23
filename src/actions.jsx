@@ -46,7 +46,7 @@ export function reloadWeather() {
 			existingQuery.abort();
 		}
 
-		existingQuery = updateWeather(getState().weather.id, data => {
+		existingQuery = updateWeather(getState().weather.place, data => {
 			existingQuery = null;
 			dispatch({ type: UPDATE_WEATHER_DATA, data });
 		});
