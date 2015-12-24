@@ -1,5 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 export default class Weather extends Component {
+
+	componentDidMount() {
+		if (!this.refs.location.value && "geolocation" in navigator) {
+			navigator.geolocation.getCurrentPosition(position => {
+				this.props.onLocationChange(position.coords.latitude + ',' + position.coords.longitude);
+			});
+		}
+	}
+
 	handleLocationChange(e) {
 		const location = this.refs.location;
 		const text = location.value;
