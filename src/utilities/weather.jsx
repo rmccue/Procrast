@@ -43,7 +43,7 @@ function runQuery(query, callback) {
 }
 
 export function findLocation(location, callback) {
-	return runQuery('select * from geo.placefinder where text="' + location + '" and gflags="R"', (request) => {
+	return runQuery('select * from geo.placefinder where text="' + location + '" and gflags="R" limit 1', (request) => {
 		if (request.readyState !== 4 || request.status !== 200) {
 			return;
 		}
