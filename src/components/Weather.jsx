@@ -68,7 +68,9 @@ export default class Weather extends Component {
 	}
 
 	updateWeather() {
-		this.props.onNeedsUpdate(this.props.place)
+		if (this.props.place) {
+			this.props.onNeedsUpdate(this.props.place);
+		}
 	}
 
 	handleWidgetClick(e) {
